@@ -7,7 +7,7 @@ namespace Persistence.DAL
 {
     public class AlunoDAL
     {
-        private EFContext context = new EFContext();
+        private EFContext context = EFContext.ObterContext();
 
         public IQueryable<Aluno> ObterAlunosOrdenadosPorNome()
         {

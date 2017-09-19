@@ -1,0 +1,22 @@
+﻿@model Model.Models.Disciplina
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.Partial("~/Views/Disciplina/_PartialDetailsDeleteView.cshtml")
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Remover" class="btn btn-danger" />
+                @Html.ActionLink("Retornar para listagem", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}

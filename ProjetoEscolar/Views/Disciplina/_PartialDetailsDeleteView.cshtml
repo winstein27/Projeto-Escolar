@@ -1,0 +1,38 @@
+﻿@model Model.Models.Disciplina
+
+<h4>Disciplina</h4>
+<hr />
+
+<div class="form-group">
+    <div class="col-md-10">
+        <b>@Html.DisplayNameFor(model => model.Nome):</b>
+        @Html.DisplayFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Pré-Requisitos</div>
+            <table class="table table-hover">
+                @foreach (var disciplina in Model.PreRequisitos)
+                {
+                    <tr><td>@disciplina.Nome</td></tr>
+                }
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Professores Habilitados</div>
+            <table class="table table-hover">
+                @foreach (var professor in Model.ProfessoresHabilitados)
+                {
+                    <tr><td>@professor.Nome</td></tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+

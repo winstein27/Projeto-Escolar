@@ -16,6 +16,7 @@ namespace Model.Models
         [DisplayName("Data de nascimento")]
         [Required(ErrorMessage = "Informe a data de nascimento.")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DataNascimento { get; set; }
 
         [Required(ErrorMessage = "Informe o RG.")]
