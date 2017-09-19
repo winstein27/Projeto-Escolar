@@ -25,7 +25,8 @@ namespace Persistence.DAL
 
         public Professor ObterProfessorPorId(long id)
         {
-            return context.Professores.Find(id);
+            return context.Professores.Where(p => p.Id == id).
+                Include(p => p.DisciplinasQuePodeMinistrar).First();
         }
 
         public Professor RemoverProfessorPorId(long id)
