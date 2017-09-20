@@ -6,11 +6,13 @@
 
 @Html.Partial("~/Views/Turma/_PartialDetailsDeleteView.cshtml")
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(m => m.Id)
-    @Html.AntiForgeryToken()
+<div class="col-md-offset-3">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.Id)
+        @Html.AntiForgeryToken()
 
-    <button type="submit" class="btn btn-danger">Remover</button>
-    @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-default" })
-}
+        <button type="submit" class="btn btn-danger">Remover</button>
+        @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-default" })
+    }
+</div>

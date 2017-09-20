@@ -15,6 +15,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">Pré-Requisitos</div>
             <table class="table table-hover">
+                @if (Model.PreRequisitos.Count == 0)
+                {
+                    <tr><td class="text-center">Disciplina sem pré-requisitos</td></tr>
+                }
                 @foreach (var disciplina in Model.PreRequisitos)
                 {
                     <tr><td>@disciplina.Nome</td></tr>
@@ -27,6 +31,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">Professores Habilitados</div>
             <table class="table table-hover">
+                @if (Model.ProfessoresHabilitados.Count() == 0)
+                {
+                    <tr><td class="text-center">Disciplina sem professores habilitados</td></tr>
+                }
                 @foreach (var professor in Model.ProfessoresHabilitados)
                 {
                     <tr><td>@professor.Nome</td></tr>
