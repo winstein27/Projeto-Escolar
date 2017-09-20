@@ -12,5 +12,6 @@ namespace Model.Models
         public String Nome { get; set; }
         public ICollection<Disciplina> PreRequisitos { get; set; }
         public virtual ICollection<Professor> ProfessoresHabilitados { get; set; }
+        public virtual ICollection<Turma> Turmas { get; set; }
     }
 }

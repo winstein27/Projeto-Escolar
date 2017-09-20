@@ -51,6 +51,7 @@
     <Compile Include="DAL\AlunoDAL.cs" />
     <Compile Include="DAL\DisciplinaDAL.cs" />
     <Compile Include="DAL\ProfessorDAL.cs" />
+    <Compile Include="DAL\TurmaDAL.cs" />
     <Compile Include="Migrations\201709142039171_InitialCreate.cs" />
     <Compile Include="Migrations\201709142039171_InitialCreate.Designer.cs">
       <DependentUpon>201709142039171_InitialCreate.cs</DependentUpon>

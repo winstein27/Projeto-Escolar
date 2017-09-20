@@ -1,0 +1,12 @@
+﻿@model Model.Models.Turma
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("~/Views/Turma/_PartialDetailsDeleteView.cshtml")
+
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-default" })
+</p>

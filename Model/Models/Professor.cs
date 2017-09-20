@@ -6,9 +6,7 @@ namespace Model.Models
 {
     public class Professor : Pessoa
     {
-        [DisplayName("Matrícula")]
-        [Required(ErrorMessage = "Informe a matrícula.")]
-        public long Matricula { get; set; }
         public virtual ICollection<Disciplina> DisciplinasQuePodeMinistrar { get; set; }
+        public virtual ICollection<Turma> TurmasQueMinistra { get; set; }
     }
 }

@@ -44,6 +44,7 @@
     <Compile Include="Services\AlunoService.cs" />
     <Compile Include="Services\DisciplinaService.cs" />
     <Compile Include="Services\ProfessorService.cs" />
+    <Compile Include="Services\TurmaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

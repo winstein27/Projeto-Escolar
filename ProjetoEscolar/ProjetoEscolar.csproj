@@ -150,6 +150,7 @@
     <Compile Include="Controllers\DisciplinaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
+    <Compile Include="Controllers\TurmaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,6 +167,14 @@
     <Content Include="Views\Disciplina\Details.cshtml" />
     <Content Include="Views\Disciplina\_PartialDetailsDeleteView.cshtml" />
     <Content Include="Views\Disciplina\Delete.cshtml" />
+    <Content Include="Views\Turma\Index.cshtml" />
+    <Content Include="Views\Turma\Create.cshtml" />
+    <Content Include="Views\Turma\Details.cshtml" />
+    <Content Include="Views\Turma\_PartialDetailsDeleteView.cshtml" />
+    <Content Include="Views\Turma\Delete.cshtml" />
+    <Content Include="Views\Turma\Edit.cshtml" />
+    <Content Include="Views\Turma\_PartialCreateEditView.cshtml" />
+    <Content Include="Views\Turma\AtribuirProfessor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

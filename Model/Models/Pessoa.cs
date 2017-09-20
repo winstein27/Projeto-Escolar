@@ -9,6 +9,10 @@ namespace Model.Models
         [DisplayName("ID")]
         public long? Id { get; set; }
 
+        [DisplayName("Matrícula")]
+        [Required(ErrorMessage = "Informe a matrícula.")]
+        public long Matricula { get; set; }
+
         [StringLength(100, ErrorMessage = "Nome deve ter no máximo 100 caracteres.")]
         [Required(ErrorMessage = "Informe o nome.")]
         public string Nome { get; set; }

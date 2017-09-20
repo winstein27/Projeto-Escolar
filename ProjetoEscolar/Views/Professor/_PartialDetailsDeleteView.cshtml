@@ -5,61 +5,47 @@
 }
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="text-center">Professor</h4>
             </div>
             <div class="panel-body">
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Nome):
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.Nome)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.DataNascimento):
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.DataNascimento)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.RG):
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.RG)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.CPF):
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.CPF)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Endereco):
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.Endereco)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Telefone):
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.Telefone)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Matricula):
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.Matricula)
-                    </dd>
-                </dl>
+                <table class="table table-hover">
+                    <tr>
+                        <td><b>@Html.DisplayNameFor(model => model.Nome):</b></td>
+                        <td>@Html.DisplayFor(model => model.Nome)</td>
+                    </tr>
+                    <tr>
+                        <td><b>@Html.DisplayNameFor(model => model.DataNascimento):</b></td>
+                        <td>@Html.DisplayFor(model => model.DataNascimento)</td>
+                    </tr>
+                    <tr>
+                        <td><b>@Html.DisplayNameFor(model => model.RG):</b></td>
+                        <td>@Html.DisplayFor(model => model.RG)</td>
+                    </tr>
+                    <tr>
+                        <td><b>@Html.DisplayNameFor(model => model.CPF):</b></td>
+                        <td>@Html.DisplayFor(model => model.CPF)</td>
+                    </tr>
+                    <tr>
+                        <td><b>@Html.DisplayNameFor(model => model.Endereco):</b></td>
+                        <td>@Html.DisplayFor(model => model.Endereco)</td>
+                    </tr>
+                    <tr>
+                        <td><b>@Html.DisplayNameFor(model => model.Telefone):</b></td>
+                        <td>@Html.DisplayFor(model => model.Telefone)</td>
+                    </tr>
+                    <tr>
+                        <td><b>@Html.DisplayNameFor(model => model.Matricula):</b></td>
+                        <td>@Html.DisplayFor(model => model.Matricula)</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="text-center">Disciplinas que pode ministrar</h4>
@@ -67,11 +53,29 @@
             <div class="panel-body">
                 @if (Model.DisciplinasQuePodeMinistrar.Count == 0)
                 {
-                    <h5 class="text-center">Não há disciplinas.</h5>
+                    <h5 class="text-center">Não há disciplinas</h5>
                 }
                 @foreach (var disciplina in Model.DisciplinasQuePodeMinistrar)
                 {
                     <h5>@disciplina.Nome</h5><hr />
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="text-center">Turmas que ministra</h4>
+            </div>
+            <div class="panel-body">
+                @if (Model.TurmasQueMinistra.Count == 0)
+                {
+                    <h5 class="text-center">Não há disciplinas</h5>
+                }
+                @foreach (var turma in Model.TurmasQueMinistra)
+                {
+                    <h5>@turma.Disciplina.Nome - @turma.Turno</h5><hr />
                 }
             </div>
         </div>
