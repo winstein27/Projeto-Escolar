@@ -19,7 +19,13 @@ namespace Persistence.DAL
             if (professor.Id == null)
                 context.Professores.Add(professor);
             else
+            {
+                var local = context.Professores.Find(professor.Id);
+                context.Entry(local).State = EntityState.Detached;
+
                 context.Entry(professor).State = EntityState.Modified;
+            }
+                
             context.SaveChanges();
         }
 

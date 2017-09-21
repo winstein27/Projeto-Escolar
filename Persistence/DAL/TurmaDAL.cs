@@ -21,6 +21,9 @@ namespace Persistence.DAL
                 context.Turmas.Add(turma);
             else
             {
+                var local = context.Turmas.Find(turma.Id);
+                context.Entry(local).State = EntityState.Detached;
+
                 context.Entry(turma).State = EntityState.Modified;
             }
             context.SaveChanges();

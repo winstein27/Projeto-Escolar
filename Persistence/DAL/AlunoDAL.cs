@@ -24,8 +24,12 @@ namespace Persistence.DAL
             if (aluno.Id == null)
                 context.Alunos.Add(aluno);
             else
+            {
+                var local = context.Alunos.Find(aluno.Id);
+                context.Entry(local).State = EntityState.Detached;
+                
                 context.Entry(aluno).State = EntityState.Modified;
-
+            }
             context.SaveChanges();
         }
 

@@ -78,25 +78,17 @@ namespace ProjetoEscolar.Controllers
         // POST: Turma/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Turma turmaAlterada)
+        public ActionResult Edit(Turma turma)
         {
             try
             {
-                Turma turma = turmaService.ObterTurmaPorId(
-                    (long) turmaAlterada.Id);
-                turma.DisciplinaId = turmaAlterada.DisciplinaId;
-                turma.Vagas = turmaAlterada.Vagas;
-                turma.Turno = turmaAlterada.Turno;
-                turma.ProfessorId = null;
-                turma.Professor = null;
-                
                 turmaService.GravarTurma(turma);
                 return RedirectToAction("Index");
             }
             catch
             {
                 PopulaViewBag();
-                return View(turmaAlterada);
+                return View(turma);
             }
         }
 
