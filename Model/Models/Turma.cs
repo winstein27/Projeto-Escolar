@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Model.Models
 {
+    public enum Turno { Matutino, Vespertino, Noturno }
+
     public class Turma
     {
         public long? Id { get; set; }
@@ -13,7 +14,7 @@ namespace Model.Models
         public long? ProfessorId { get; set; }
         public Professor Professor { get; set; }
         [Required]
-        public string Turno { get; set; }
+        public Turno Turno { get; set; }
         [Required]
         [DisplayName("Número de Vagas")]
         public int Vagas { get; set; }
